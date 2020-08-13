@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
         if current_user.update(user_params)
             UpdateUserJob.perform_later(current_user.id)
             flash[:notice] = 'Your profile has been updated'
-            rewdirect_to root_path
+            redirect_to root_path
         else
             flash[:notice] = 'There was an error'
             redirect_to root_path
