@@ -3,8 +3,6 @@ namespace :user do
   task update_all: :environment do
     users = User.all
     puts "Creating #{users.size} jobs."
-    users.each do |user|
-      UpdateUserJob.perform_later(user.id)
-    end
+    users.each { |user| UpdateUserJob.perform_later(user.id) }
   end
 end
