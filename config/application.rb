@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# load ENV before rails server; needed for clearbit API
+Dotenv::Railtie.load
+
 module Preparation13082020
   class Application < Rails::Application
     config.generators do |generate|
