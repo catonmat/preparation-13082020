@@ -17,5 +17,7 @@ class UpdateUserJob < ApplicationJob
     else
       puts "Could not find data on #{user.email}"
     end
+
+    sleep 5
   end
 end
