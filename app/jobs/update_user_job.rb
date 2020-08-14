@@ -9,7 +9,6 @@ class UpdateUserJob < ApplicationJob
     Clearbit.key = ENV['CLEARBIT_API']
 
     person = Clearbit::Enrichment::Person.find(email: user.email)
-    binding.pry
 
     if person && !person.pending?
       puts "Name: #{person.name.fullName}"
