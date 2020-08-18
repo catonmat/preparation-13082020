@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 # load ENV before rails server; needed for clearbit API
 Dotenv::Railtie.load
+require 'clearbit'
 
 module Preparation13082020
   class Application < Rails::Application
