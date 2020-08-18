@@ -11,6 +11,6 @@ class User < ApplicationRecord
   def async_update
     # user.async_update
     # self.async_update
-    UpdateUserJob.perform_later(self.id) #self == current_user
+    UpdateUserJob.perform_later(self) #self == current_user
   end
 end
